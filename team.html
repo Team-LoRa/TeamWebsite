@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Team Lora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.lora-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.lora-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="lora-sidebar lora-blue lora-collapse lora-top lora-large lora-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="lora_close()" class="lora-button lora-hide-large lora-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+  <div class="lora-bar-block">
+    <a href="index.html" class="lora-bar-item lora-button lora-hover-white">Project Intro</a>
+    <a href="team.html"class="lora-bar-item lora-button-outline lora-hover-white">Project Team</a>
+    <a href="description.html" class="lora-bar-item lora-button lora-hover-white">Project Description</a>
+    <a href="requirements.html" class="lora-bar-item lora-button lora-hover-white">High Level Requirements</a>
+    <a href="tech.html" class="lora-bar-item lora-button lora-hover-white">Technologies</a>
+    <a href="solutions.html" class="lora-bar-item lora-button lora-hover-white">Envisioned Solutions</a>
+    <a href="resources.html" class="lora-bar-item lora-button lora-hover-white">Schedule & Resources</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="lora-container lora-top lora-hide-large lora-blue lora-xlarge lora-padding">
+  <a href="javascript:void(0)" class="lora-button lora-blue lora-margin-right" onclick="lora_open()">X</a>
+  <span>Team Lora</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="lora-overlay lora-hide-large" onclick="lora_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="lora-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="lora-container" style="margin-top:0px" id="teamlora">
+        <h1 class="lora-jumbo">
+          <img src="logo.png" alt="logo">
+          <b>Team Lora</b>
+        </h1>
+
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+
+    </div>
+
+    <!-- The Team -->
+    <div class="lora-row-padding">
+        <div class="lora-col m3 lora-margin-bottom">
+            <div class="lora-light-grey">
+                <img src="images/ryan.jpg" alt="Ryan" style="width:100%">
+                <div class="lora-container">
+                    <h3>Ryan</h3>
+                    <h3>Wallace</h3>
+                    <p class="lora-opacity">Team Lead and Customer Communicator</p>
+                    <p>Enthusiastic and dilligent; keeps Team Lora running smoothly
+                       and on schedule. </p>
+                    <p>As the Team Lead, Ryan will be organizing and leading our
+                       meetings. He will assign tasks to team members, monitor
+                       task progress, and curate the project's Kanban board.</p>
+                    <p>As the Customer Communicator, Ryan will be in charge of
+                       communicating with the project's client and keeping them in
+                       the loop as the the team's progress.</p>
+                </div>
+            </div>
+        </div>
+        <div class="lora-col m3 lora-margin-bottom">
+            <div class="lora-light-grey">
+                <img src="images/ben.png" alt="Benjamin" style="width:100%">
+                <div class="lora-container">
+                    <h3>Benjamin</h3>
+                    <h3>Couey</h3>
+                    <p class="lora-opacity">Architect and Recorder</p>
+                    <p>Experienced with front and back end web development;
+                       passioante about writing both code and English.</p>
+                    <p>As the Architect, Benjamin will be responisble for maintaining
+                       documentation on the project's architecture as well as ensuring
+                       the implementation follow this structure.</p>
+                    <p>As the Recorder, Benjamin will write and maintain extensive
+                       notes of all meetings the team is involved with. He will
+                       serve as an editor on large deliverables.</p>
+                </div>
+            </div>
+        </div>
+        <div class="lora-col m3 lora-margin-bottom">
+            <div class="lora-light-grey">
+                <img src="images/brandon.png" alt="Brandon" style="width:100%">
+                <div class="lora-container">
+                    <h3>Brandon</h3>
+                    <h3>Salter</h3>
+                    <p class="lora-opacity">Asset Coordinator</p>
+                    <p>A strong communicator and able software engineer; the
+                       team's liason to the client's research lab.</p>
+                    <p>As the Asset Coordinator, Brandon will be responisible for
+                      obtaining and tracking all materials required by the project,
+                      including LoRa gateways and Andriod Phones.</p>
+                    <p>He is also responsible for coordinating with the client's
+                      research lab which team LoRa will have to work with closely
+                      as the project matures.</p>
+                </div>
+            </div>
+        </div>
+        <div class="lora-col m3 lora-margin-bottom">
+            <div class="lora-light-grey">
+                <img src="images/moe.jpg" alt="Mohammed" style="width:100%">
+                <div class="lora-container">
+                    <h3>Mohammed</h3>
+                    <h3>Alfouzan</h3>
+                    <p class="lora-opacity">Release Manager</p>
+                    <p>Skilled with Android development; will lead the charge
+                       on the end-device side of the project.</p>
+                    <p>As the Release Manager, Mohammed will be responsible for
+                       managing the project's GitHub repository. This will include
+                       coordinating project branching, handling merge conflicts,
+                       and curating commit logs. </p>
+                    <p>He will also be responsible for currating the project's issue
+                       board.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--
+    <div class="lora-container" id="one" style="margin-top:0px">
+        <h1 class="lora-xxxlarge lora-text-blue"><b>Option 1</b></h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+        <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+        <p>
+            Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </div>
+
+</div>
+<!-- style.css Container -->
+<div class="lora-light-grey lora-container lora-padding-32" style="margin-top:75px;padding-right:58px"><p class="lora-right">Team 6: Team Lora</p></div>
+
+<script>
+// Script to open and close sidebar
+function lora_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function lora_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Team Lora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.lora-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.lora-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="lora-sidebar lora-blue lora-collapse lora-top lora-large lora-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="lora_close()" class="lora-button lora-hide-large lora-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+  <div class="lora-bar-block">
+    <a href="index.html" class="lora-bar-item lora-button lora-hover-white">Project Intro</a>
+    <a href="team.html"class="lora-bar-item lora-button lora-hover-white">Project Team</a>
+    <a href="description.html" class="lora-bar-item lora-button-outline lora-hover-white">Project Description</a>
+    <a href="requirements.html" class="lora-bar-item lora-button lora-hover-white">High Level Requirements</a>
+    <a href="tech.html" class="lora-bar-item lora-button lora-hover-white">Technologies</a>
+    <a href="solutions.html" class="lora-bar-item lora-button lora-hover-white">Envisioned Solutions</a>
+    <a href="resources.html" class="lora-bar-item lora-button lora-hover-white">Schedule & Resources</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="lora-container lora-top lora-hide-large lora-blue lora-xlarge lora-padding">
+  <a href="javascript:void(0)" class="lora-button lora-blue lora-margin-right" onclick="lora_open()">X</a>
+  <span>Our Project</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="lora-overlay lora-hide-large" onclick="lora_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="lora-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="lora-container" style="margin-top:0px" id="teamlora">
+        <h1 class="lora-jumbo">
+          <img src="logo.png" alt="logo">
+          <b>Project Description</b>
+        </h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+    </div>
+
+    <!-- Option 1 -->
+    <div class="lora-container" id="one" style="margin-top:0px">
+        <h1 class="lora-xxxlarge lora-text-blue"><b>Mobile Crowdsensing Framework over Low-power Wide Area Networks</b></h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+        
+
+  <div class="lora-row">
+    <div class="lora-twothird lora-container">
+      <h1 class="lora-text-blue">Overview</h1>
+      <p>As the world becomes increasingly reliant on the internet, providing ubiquitous connectivity
+ 	also becomes vital. Current technology that connects devices over a large area relies on very
+	expensive cell towers or satellites. Due to the cost, these technologies are rarely set up to
+	service rural communities, cutting these people off from the information and opportunities
+	provided by the internet. A new technology, Long Range Wide Area Networks (LoRaWAN), has the
+	potential to change this by providing connectivity that is both far reaching and inexpensive.
+
+        </p>Our client, Dr. Vigil-Hayes and her research lab CANIS, have been working with this 
+	technology for about a year. Their intention is to take advantage of LoRaWANs long range
+	in order to increase connectivity in rural areas and support mobile crowdsensing endeavors.
+	In these cases, LoRaWAN will be able to provide the services of a cell tower or satellite 
+	connection at a fraction of the cost and power consumption.
+<p></p>
+        <img src="ProjectDescription.png" alt="outline">
+	<p> <b> Figure 1: </b> A breif diagram of what our client needs</p>
+    </div>
+  </div>
+  <div class="lora-row">
+    <div class="lora-twothird lora-container">
+          <p>
+        As it shown in Figure 1, Both of theses applications require mobile devices, such as smartphones, 
+	be able to connect over LoRaWAN. Traditional network technologies, such 
+	as WiFi and broadband transmissions, differ greatly from the underlying 
+	technology of LoRaWAN. There is presently no generic interface that would
+	allow a smartphone or similar device to transmit messages over LoRaWAN, 
+	making it impossible to interact with any web applications. This project
+	will make it possible for Android phones and, potentially, other devices 
+	to communicate over LoRaWAN.
+         </p>
+
+          <p>
+         To achieve this, we will be creating an interface for mobile developers 
+	that abstracts the process of transmitting a message over LoRaWAN. This 
+	interface will be comprised of a library for Android development and a 
+	proxy server. The library will encode messages and send them to the LoRaWAN
+	network. These messages will then be received by the proxy server which will
+	decode them and forward them to their intended destination.
+          </p>
+
+          <img src="FragmentationDiagram.jpg" alt="outline" width="120%">
+	<p> <b> Figure 2: </b> Fragmentation Diagram that shows how the message will get fragmented 
+		on the LoRa Messenger Library as a best effort fragmentation and then gets resumbled back again on the proxy server. </p>
+
+	<p>
+          Accomplishing this will allow our client to dramatically increase connectivity, especially
+          in rural or underdeveloped areas. For crowdsensing applications that only require periodic
+          transmissions of data, LoRaWAN could displace cell and satellite as the network of choice.
+          With LoRaWAN, connectivity can become more ubiquitous to suit the networked world's needs.
+          </p>
+
+
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+          <p>
+            The initial concept for this project was provided by our sponsor, Dr. Vigil-Hayes
+            in the form of a <a href="Vigil-Hayes-LoRA.pdf" download>capstone project proposal</a>.
+          </p>
+    </div>
+  </div>
+        
+
+
+    </div>
+
+</div>
+    <!-- style.css Container -->
+<div class="lora-light-grey lora-container lora-padding-32" style="margin-top:75px;padding-right:58px"><p class="lora-right">Team 6: Team Lora</p></div>
+
+<script>
+// Script to open and close sidebar
+function lora_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function lora_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Team Lora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.lora-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.lora-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="lora-sidebar lora-blue lora-collapse lora-top lora-large lora-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="lora_close()" class="lora-button lora-hide-large lora-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+  <div class="lora-bar-block">
+    <a href="index.html" class="lora-bar-item lora-button lora-hover-white">Project Intro</a>
+    <a href="team.html"class="lora-bar-item lora-button lora-hover-white">Project Team</a>
+    <a href="description.html" class="lora-bar-item lora-button lora-hover-white">Project Description</a>
+    <a href="requirements.html" class="lora-bar-item lora-button lora-hover-white">High Level Requirements</a>
+    <a href="tech.html" class="lora-bar-item lora-button lora-hover-white">Technologies</a>
+    <a href="solutions.html" class="lora-bar-item lora-button-outline lora-hover-white">Envisioned Solutions</a>
+    <a href="resources.html" class="lora-bar-item lora-button lora-hover-white">Schedule & Resources</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="lora-container lora-top lora-hide-large lora-blue lora-xlarge lora-padding">
+  <a href="javascript:void(0)" class="lora-button lora-blue lora-margin-right" onclick="lora_open()">X</a>
+  <span>Team Lora</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="lora-overlay lora-hide-large" onclick="lora_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="lora-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="lora-container" style="margin-top:0px" id="teamlora">
+        <h1 class="lora-jumbo">
+          <img src="logo.png" alt="logo">
+          <b>Envisioned Solutions</b>
+        </h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+    </div>
+
+    <!-- Option 1 -->
+    <div class="lora-container" id="one" style="margin-top:0px">
+        <h1 class="lora-xxxlarge lora-text-blue"><b>Our Solution</b></h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+        <p>
+        So What we are building to solve this problem is an easy-to-use framework 
+	that will abstract the process of transmitting a message over LoRaWAN and make
+	it easier to develop mobile crowd-sensing applications that communicate in a efficient way.
+	Our framework accomplishes this by implementing an encoding scheme behind a simple interface.
+	The developer of a LoRaWAN application such as the CANIS lab developers for example can use our
+	configuration service that is on the proxy server as you can see here to create an encoding 
+	scheme tailored for their application. Then, with just a single call to our LoRaMessenger 
+	library, a message like an HTTP message for examples can gets encoded, fragmented, and 
+	transmitted over LoRaWAN network. On the other end, a proxy server will receive and decode
+	these messages before sending them off to their intended destination on a web server.</p>
+<p>
+	This framework will help Dr. Vigil-Hayes and the CANIS lab efforts by making LoRaWAN an 
+	easier technology to develop for and will serve as a stepping stone for future mobile 
+	crowd-sensing projects.
+        </p>
+    </div>
+    <img src="images/solution.png" alt="outline" width="80%">
+<p> <b> Figure 1: </b> An architecture diagram which shows our system high-level components and 
+	how they will interact with each other. </p>
+
+ <ul>
+        <li><b> LoRaMessenger: </b></li> 
+	<p>The LoRaMessenger will be an Android library that provides a black box 
+	interface for an Android app to call on in order to send a message over LoRaWAN.
+	As shown in Figure 1, this interface will be responsible for encoding the message
+	by referencing the encoding tables that are generated on the proxy server configurable
+	services. The developer is responsible for copying the generated encoding table files and 
+	including them with their app. After the message gets encoded, the message is forwarded to 
+	the LoRa node via a wifi connection that requires an IP address and a port number. Then, 
+	the message will be ready to be sent over the loRaWAN network by the CANIS lab protocols. 
+	</p>
+
+	<li><b> Configuration Service: </b></li> 
+	<p> Based on Figure 1, the configurable service will live on 
+	the proxy server component and serves as a utility to generate encoding 
+	tables. Future developers will submit a collection of the valid data values their 
+	app might send, and these values will be related to byte code keys. After it gets 
+	customized, the encoding tables will be written to a JSON file that will be copied 
+	to the LoRaMessenger package by future developers to synchronize the encoding scheme 
+	between the LoRaMessenger and proxy server. Later, both the LoRaMessenger and proxy 
+	server will refer to their copy of the encoding table to encode and decode messages 
+	respectively.
+	</p>
+
+	<li><b> Proxy server: </b></li> 
+	<p> The proxy server will be responsible for receiving and handling messages
+	 from the LoRa Gateway and decoding it based on the encoding table. After the 
+	message gets decoded, the proxy server will simply forward the message to its destination.</p>
+</ul>
+
+
+</div>
+    <!-- style.css Container -->
+<div class="lora-light-grey lora-container lora-padding-32" style="margin-top:75px;padding-right:58px"><p class="lora-right">Team 6: Team Lora</p></div>
+
+<script>
+// Script to open and close sidebar
+function lora_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function lora_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

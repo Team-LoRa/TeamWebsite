@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Team Lora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.lora-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.lora-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="lora-sidebar lora-blue lora-collapse lora-top lora-large lora-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="lora_close()" class="lora-button lora-hide-large lora-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+  <div class="lora-bar-block">
+    <a href="index.html" class="lora-bar-item lora-button lora-hover-white">Project Intro</a>
+    <a href="team.html"class="lora-bar-item lora-button lora-hover-white">Project Team</a>
+    <a href="description.html" class="lora-bar-item lora-button lora-hover-white">Project Description</a>
+    <a href="requirements.html" class="lora-bar-item lora-button-outline lora-hover-white">High Level Requirements</a>
+    <a href="tech.html" class="lora-bar-item lora-button lora-hover-white">Technologies</a>
+    <a href="solutions.html" class="lora-bar-item lora-button lora-hover-white">Envisioned Solutions</a>
+    <a href="resources.html" class="lora-bar-item lora-button lora-hover-white">Schedule & Resources</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="lora-container lora-top lora-hide-large lora-blue lora-xlarge lora-padding">
+  <a href="javascript:void(0)" class="lora-button lora-blue lora-margin-right" onclick="lora_open()">X</a>
+  <span>Team Lora</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="lora-overlay lora-hide-large" onclick="lora_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="lora-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="lora-container" style="margin-top:0px" id="teamlora">
+        <h1 class="lora-jumbo">
+          <img src="logo.png" alt="logo">
+          <b>High Level Requirements</b>
+        </h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+    </div>
+
+    <!-- Option 1 -->
+    <div class="lora-container" id="one" style="margin-top:0px">
+        <h1 class="lora-xxxlarge lora-text-blue"><b>Mobile Crowdsensing Framework over Low-power Wide Area Networks</b></h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+	<h1><b> Functional Requirements </b> </h1>
+	<p> Our functional requirements are based upon the requirements list we
+	 obtained from meeting with our client. This section is separated into
+	 the three main parts of our project: the Android library, the proxy server,
+	 and the proof-of-concept application which implements the library and server.
+ 	</p>
+	<p> </p>
+	<h3> <b> Android Library </b> </h3> 
+	 <b> An Android library which abstracts the process of encoding data
+	 and sending it from the phone to the LoRa Node. </b>
+        <ul>
+         <li> The library will provide functions which allow services and applications on the
+	 phone to submit data that will then be transferred over LoRaWAN. </li>
+	 <li> The library will provide functions which take this submitted data and encode 
+	 it by mapping the messages information to bytes in a LoRaWAN packet.</li>
+	 <li> The application which submitted the message is identified by the first
+	      byte in the encoded message.</li>
+	<li>  The service which the message is performing is identified by the second 
+	byte in the encoded message. </li>
+	<li> Any arguments passed along with the message are encoded in the remaining bytes. </li>
+        </ul>
+
+	 <b> The above functions will be able to service the basic API calls made by the
+	 OpenCellID application.</b>
+	<p> As mentioned above, we will be designing our encoded messages to work with
+	 OpenCellIDs APIs and all other applications will be ignored for
+	 the time being. Our encoded message will be able to use a few API hooks from the
+	 aforementioned applications when we are finished.</p>
+
+	<p> </p>
+	 <b> If a message is too large to be encoded into a single packet, our library 
+	will drop the message. </b>
+	<p> If the library finds that a message is too large, it will drop the message in 
+	instead will report an error to the node which will then be passed along to the gateway. </p>
+	<p> </p>
+	 <b>  Functions which establish a WiFi connection to the LoRa Node and transmit
+	 the encoded messages. </b>
+	<p> Similar to how the first byte will represent the application that is sending 
+	the message, if the library finds that an unsupported application or an application 
+	that is supported is trying to send a message that is to large, it will drop the message
+	in instead will report an error to the node which will then be passed along to the gateway.
+	</p>
+
+<p> </p>
+<p> </p>
+<p> </p>
+<h3> <b> Proxy Server </b> </h3> 
+	 <b> A configurable proxy server which abstracts the process of receiving data on the 
+	LoRa Gateway and forwarding it to its intended destination. </b>
+	<ul>
+	<li> The proxy server will be able to connect to the LoRa Gateway over 
+	WiFi and receive incoming messages. </li>
+	<li>  A configuration service will be running on the server that provides
+	 an interface that allows developers to connect to the proxy server and configure it. </li>
+	<li>  The proxy server will generate a handler for an application. </li> 
+	</ul>
+<p> </p>
+<p> </p>
+<p> </p>
+<h3> <b> Proof of Concept Application </b> </h3> 
+	<b> A proof-of-concept application which extends the  OpenCellID app and demonstrates 
+	the use of the library and proxy server developed above. </b>
+	<ul>
+	<li>  This application will take messages sent by the OpenCellID app, intended to be uploaded to the web server
+		, and, using the library, send these messages to the LoRa Node. </li>
+	<li>  The proxy server will be configured to handle the messages sent by this application. </li>
+	<li>  Assuming that the messages arrive at the proxy server, it will forward them to the appropriate
+	 server on the web. </li>
+	</ul>
+
+<p> </p>
+<p> </p>
+<p> </p>
+<h1> <b> Non-Functional Requirements </b> </h1>
+<p> Our non-functional requirements are based on our client desire for this project to 
+	serve as a tool for future development of mobile applications using LoRaWAN as a 
+	network. The section also includes the basic requirement of security common to all
+	 networked applications. </p>
+<p> </p>
+<p> </p>
+<b> The framework will maintain the security of data entrusted to it </b>
+<ul>
+    <li> The wifi connection between the Android application and the LoRa 
+	Node will be secured with encryption. </li>
+    <li>  The wifi connection between the LoRa gateway and the proxy 
+	server will be secured with encryption. </li>
+    <li>  The proxy server will not allow developers to supply authentication tokens 
+	for messages over an insecure connection. </li>
+    <li> The connection between the proxy server and the wider internet 
+	 will be secured with encryption. </li>
+</ul>
+
+<b> The framework will be easily usable by future developers </b>
+<ul>
+    <li>  The codebase will be open source. </li>
+    
+    <li>  The codebase will use markdown to create a robust reference 
+	document hosted on the Github repository.</li>
+
+    <li> The CANIS lab will be able to implement the framework without outside assistance </li>
+
+</ul>
+
+<b> The framework will be easily extensible by future developers </b>
+<ul>
+    <li> The codebase will be heavily commented and documented to explain design decisions. </li>
+
+    <li> The codebase will avoid an Android-specific implementation wherever possible. </li>
+</ul>
+
+<p> </p>
+<p> </p>
+<p> </p>
+<h1> <b> Environment Requirements </b> </h1>
+<p> When formulating our functional and nonfunctional requirements, we also needed 
+	to take into consideration the CANIS Lab and their technology. Environmental
+	requirements deal with the domain requirements and their interactions with 
+	the system and the final product will run on. They are as follows: </p>
+
+<ul>
+	<li> <b> The project will be compatible with the CANIS lab LoRa Node </b> </li>
+	<p> The CANIS lab is working with the LoRa Node and will be the primary users
+	 of our project. With this in mind it is important that our Android library
+	 is compatible with their technology. </p>
+
+	<li> <b> The project will be compatible with CANIS lab LoRa Gateway </b> </li>
+	<p> Another compatibility requirement we need to keep in mind is having the 
+	CANIS lab LoRa Gateway work with our proxy server. We will endeavor to make 
+	the proxy server work with any LoRa Gateway but must make sure our system works
+	 with the CANIS lab hardware. </p>
+
+	<li> <b> The proof of concept application will extend the OpenCellID application </b> </li>
+	<p> To demonstrate our working library we will be creating a proof-of-concept application.
+	 Our client requested this test application would use data from OpenCellID.
+	 This will be a great way to demonstrate our working library at the end of the project. </p>
+
+
+
+</ul>
+
+
+    </div>
+
+</div>
+<!-- style.css Container -->
+<div class="lora-light-grey lora-container lora-padding-32" style="margin-top:75px;padding-right:58px"><p class="lora-right">Team 6: Team Lora</p></div>
+
+<script>
+// Script to open and close sidebar
+function lora_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function lora_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

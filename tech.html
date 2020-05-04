@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Team Lora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.lora-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.lora-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="lora-sidebar lora-blue lora-collapse lora-top lora-large lora-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="lora_close()" class="lora-button lora-hide-large lora-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+  <div class="lora-bar-block">
+    <a href="index.html" class="lora-bar-item lora-button lora-hover-white">Project Intro</a>
+    <a href="team.html"class="lora-bar-item lora-button lora-hover-white">Project Team</a>
+    <a href="description.html" class="lora-bar-item lora-button lora-hover-white">Project Description</a>
+    <a href="requirements.html" class="lora-bar-item lora-button lora-hover-white">High Level Requirements</a>
+    <a href="tech.html" class="lora-bar-item lora-button-outline lora-hover-white">Technologies</a>
+    <a href="solutions.html" class="lora-bar-item lora-button lora-hover-white">Envisioned Solutions</a>
+    <a href="resources.html" class="lora-bar-item lora-button lora-hover-white">Schedule & Resources</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="lora-container lora-top lora-hide-large lora-blue lora-xlarge lora-padding">
+  <a href="javascript:void(0)" class="lora-button lora-blue lora-margin-right" onclick="lora_open()">X</a>
+  <span>Team Lora</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="lora-overlay lora-hide-large" onclick="lora_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="lora-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="lora-container" style="margin-top:0px" id="teamlora">
+        <h1 class="lora-jumbo">
+          <img src="logo.png" alt="logo">
+          <b>Technologies</b>
+        </h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+    </div>
+
+    <!-- Option 1 -->
+    <div class="lora-container" id="one" style="margin-top:0px">
+        <h1 class="lora-xxxlarge lora-text-blue"><b>Mobile Crowdsensing Framework over Low-power Wide Area Networks</b></h1>
+        <hr style="width:100px;border:5px solid blue" class="lora-round">
+        <h2> We need many technologies to solve our problem such as: </h2>
+
+         <ul>
+		 <li><b> Programming Language for the Back End Proxy Server: </b></li>
+              		<p>
+              		As part of the project back-end requirements we need to implement an application that runs on the LoRa Gateway router.
+			This application will receive the small fragments of messages sent to it 
+			from the LoRa Node, decode and recombine them, then forward the complete 
+			HTTP message to the back-end website. We have chose python as a back-end 
+			programming language to write this application which can perform these tasks.
+			Python is a high-level scripting language which has an enormous number of 
+			built-in libraries; especially the libraries that are related to transmitting
+			data over a network. Python is one of the most human-readable programming 
+			languages available which support the creation of a well-documented codebase
+			for our client.
+			</p>
+              		<h1></h1>
+              <li> <b> Android Language for the Front End Library: </b> </li>
+              		<p>
+			The project basic goal is the enabling of mobile crowdsensing over a LoRaWAN connection 
+			so it is necessary to have an application that runs on these end-devices. for this 
+			application we have chosen kotlin as the main Android programming language. Kotlin is 
+			a secondary language for Android development that is also included as 
+			native to Android Studio. It has many of the same advantages as Java and
+			has some nice quality of life features with a greater focus on mobile development.
+              		<h1></h1>
+
+              <li><b> LoRa Gateway: </b></li> 
+              		<p>
+              		We need a media access control that is designed
+                    to send messages between end devices and the central network server.
+                    As in figure 1, the LoRa Gateway will be connected to the server by standard IP connection
+                    and act as a transparent bridge which does convert RF packets to
+                    IP packets and vice-versa.
+                   <h1></h1>
+                    <img src="Gateway.JPG" alt="Gateway" width = "200" height = "200">
+                    <p> <b> Figure 1: </b> LoRa Gateway </p>
+                    </p>
+                    <h1></h1>
+              <li> <b> LoRa Node: </b></li>
+              		<p>
+              		LoRa Node is essintial to recieve the message from an android device 
+			and other mobile crowdsensing projects (see Figure.2) to the LoRa Gateway over LoRaWAN
+			network.
+                   <h1></h1>
+              		<img src ="wifiToLoRa.png" alt = "wifiToLoRa" width = "250" height = "200">
+              		<p> <b>Figure 2: </b> LoRa Node </p> 
+              		</p>
+              		<h1></h1>
+                           <li> <b> Actual Android Devices: </b> </li>
+              		<p>
+              		We need to test our source code with an actual device that it is connected
+              		to LORAWAN. An actual Android device saves developers a huge amount of time
+              		in testing because emulators do not work properly with networking features and might slow the
+              		performance of the computer.
+              		</p>
+              		<h1></h1>              
+        </ul>
+    </div>
+
+</div>
+<!-- style.css Container -->
+<div class="lora-light-grey lora-container lora-padding-32" style="margin-top:75px;padding-right:58px"><p class="lora-right">Team 6: Team Lora</p></div>
+
+<script>
+// Script to open and close sidebar
+function lora_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function lora_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
